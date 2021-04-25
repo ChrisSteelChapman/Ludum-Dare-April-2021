@@ -48,12 +48,13 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
+        Vector3 down = transform.TransformDirection(Vector3.down);
 
         bool isSprinting = Input.GetKey(KeyCode.LeftShift);
         float curSpeedX = canMove ? (isSprinting ? runSpeed : walkSpeed) * Input.GetAxisRaw("Vertical") : 0;
         float curSpeedY = canMove ? (isSprinting ? runSpeed : walkSpeed) * Input.GetAxisRaw("Horizontal") : 0;
         float movementDirY = moveDir.y;
-        moveDir = (forward * curSpeedX) + (right * curSpeedY);
+        moveDir = (forward * curSpeedX) + (down * 10.0f) + (right * curSpeedY);
 
         if (canMove)
         {
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         characterController.Move(moveDir * Time.deltaTime);
+        //transform.position = new Vector3(transform.position.x, 0.0f, transform.position.z);
     }
 
     IEnumerator AttackCooldown()

@@ -21,6 +21,7 @@ public class AbyssManager : MonoBehaviour
     //Spawn Coroutine
     IEnumerator WaveEnd()
     {
+        StartCoroutine(WaveOverride());
         while (true)
         {
             // Find is a big heavy operation, so we don't want to do it every frame.
@@ -28,6 +29,7 @@ public class AbyssManager : MonoBehaviour
             // If there aren't any enemies left in the scene, 
             if (GameObject.FindObjectsOfType<EnemyController>().Length < 1)
             {
+                StopCoroutine(WaveOverride());
                 // Wait 30 seconds
                 yield return new WaitForSeconds(25f);
                 // 5 second warning
@@ -40,6 +42,15 @@ public class AbyssManager : MonoBehaviour
         }
     }
 
+    //Emergency wave end
+    IEnumerator WaveOverride()
+    {
+        yield return new WaitForSeconds(60f);
+        foreach (var straggler in GameObject.FindObjectsOfType<EnemyController>())
+        {
+            Destroy(straggler);
+        }
+    }
     private List<GameObject> waveTypes(int waveNum)
     {
         switch(waveNum % 4)
