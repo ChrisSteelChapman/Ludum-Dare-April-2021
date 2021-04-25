@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public bool isCarryingObject;
     private Placeable heldObject;
 
+    public ProgressBar progressBar;
+    public HealthBar healthBar;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -107,7 +110,12 @@ public class PlayerController : MonoBehaviour
             if (workStation != null)
             {
                 workStation.IncrementBuildTimer();
+                progressBar.slider.value = workStation.buildTimer;
             }
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            progressBar.slider.value = 0;
         }
     }
 

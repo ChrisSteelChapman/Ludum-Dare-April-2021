@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 9042054812364925172}
   - component: {fileID: 9042054812364925173}
   - component: {fileID: 9042054812364925170}
+  - component: {fileID: 3332397013423954397}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -347,6 +348,7 @@ MonoBehaviour:
   attackCooldown: 1
   holdPoint: {fileID: 9042054810908210256}
   isCarryingObject: 0
+  progressBar: {fileID: 3332397013423954397}
 --- !u!114 &9042054812364925170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,7 +370,19 @@ MonoBehaviour:
   meleeKnockBack: 10
   knifeDurability: 100
   meleeRange: 5
-  firePoint: {fileID: 9042054810831733926}
+--- !u!114 &3332397013423954397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042054812364925162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0fe6a91a050564ea04579d0585d8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 0}
 --- !u!1001 &2787317410196383472
 PrefabInstance:
   m_ObjectHideFlags: 0
