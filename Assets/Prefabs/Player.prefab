@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5499807404692210908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8386260284281366131}
+  m_Layer: 10
+  m_Name: MeleeHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8386260284281366131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499807404692210908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9042054812364925161}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9042054810765307026
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +60,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.42, z: 0}
   m_LocalScale: {x: 0.2, y: 0.19999999, z: 0.19999999}
   m_Children:
+  - {fileID: 2388089879809032475}
   - {fileID: 8858982392492878767}
   m_Father: {fileID: 9042054812364925161}
   m_RootOrder: 0
@@ -125,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9042054810831733926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9042054810908210256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HoldPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +222,6 @@ GameObject:
   - component: {fileID: 9042054812364925172}
   - component: {fileID: 9042054812364925173}
   - component: {fileID: 9042054812364925170}
-  - component: {fileID: 9042054812364925171}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -212,7 +242,7 @@ Transform:
   m_Children:
   - {fileID: 9042054810765307038}
   - {fileID: 9042054810908210256}
-  - {fileID: 2388089879809032475}
+  - {fileID: 8386260284281366131}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -332,45 +362,34 @@ MonoBehaviour:
   weaponType: 1
   weaponsArray: []
   boltDamage: 10
+  boltsRemaining: 15
   fpsCamera: {fileID: 9042054810765307039}
-  meleeHitBox: {fileID: 9042054812364925171}
   meleeDamage: 10
   meleeKnockBack: 10
+  knifeDurability: 100
+  meleeRange: 5
   firePoint: {fileID: 9042054810831733926}
---- !u!65 &9042054812364925171
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9042054812364925162}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8895689, y: 2.0135067, z: 1.4696816}
-  m_Center: {x: 0.045860004, y: -0.006752968, z: 1.4267867}
 --- !u!1001 &2787317410196383472
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 9042054812364925161}
+    m_TransformParent: {fileID: 9042054810765307038}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.507
+      value: -2.535
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.1000001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.426
+      value: 2.1300004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
@@ -395,7 +414,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
@@ -415,22 +434,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.28016
+      value: 1.4008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.28016
+      value: 1.4008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.28016
+      value: 1.4008001
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1371152c872acfe489969b46ccdb4d80,
         type: 3}
       propertyPath: m_Name
       value: Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1371152c872acfe489969b46ccdb4d80,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1371152c872acfe489969b46ccdb4d80, type: 3}
@@ -485,7 +509,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 28dfc167616b5e943a7849b68ac5dfa5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28dfc167616b5e943a7849b68ac5dfa5,
         type: 3}
@@ -517,10 +541,30 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.5000002
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 28dfc167616b5e943a7849b68ac5dfa5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: 28dfc167616b5e943a7849b68ac5dfa5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 28dfc167616b5e943a7849b68ac5dfa5,
         type: 3}
       propertyPath: m_Name
       value: Crossbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28dfc167616b5e943a7849b68ac5dfa5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 28dfc167616b5e943a7849b68ac5dfa5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28dfc167616b5e943a7849b68ac5dfa5, type: 3}

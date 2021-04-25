@@ -8,30 +8,33 @@ public class PlayerAttack : MonoBehaviour
 
     public GameObject[] weaponsArray;
     public int boltDamage = 10;
+    public int boltsRemaining = 15;
 
     public Camera fpsCamera;
 
-    public Collider meleeHitBox;
     public int meleeDamage = 10;
     public float meleeKnockBack = 10f;
+    public int knifeDurability = 100;
+    public float meleeRange = 5f;
 
-    public Transform firePoint;
+
+    // Bitshift index of layer to get a bitmask.
+    int layerMask = 1 << 10;
 
     private void Start()
     {
-        meleeHitBox.enabled = false;
-    }
-
-    private void Update()
-    {
-        
+        // Invert Layermask.
+        layerMask = ~layerMask;
     }
 
     public void Fire()
     {
-        if (weaponType == 1) {
+        if (weaponType == 1 && boltsRemaining >= 0)
+        {
             RaycastHit hit;
             Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit);
+            Debug.Log(hit.transform);
+            boltsRemaining--;
 
             Damageable target = hit.transform.GetComponent<Damageable>();
             if (target != null)
@@ -39,22 +42,20 @@ public class PlayerAttack : MonoBehaviour
                 target.ChangeHealth(-boltDamage);
             }
         }
-        else
+        else if (weaponType == 0)
         {
-            StartCoroutine("meleeAttack");
+            Debug.Log("Stabbing");
+            RaycastHit stab;
+            Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out stab, meleeRange);
+            Debug.Log(stab.transform);
+            knifeDurability--;
+
+            Damageable stabVictim = stab.transform.GetComponent<Damageable>();
+            if (stabVictim != null)
+            {
+                stabVictim.ChangeHealth(-meleeDamage);
+            }   
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // TODO: This is going off when enemies touch the player, not on swings.
-        other.GetComponent<Damageable>().ChangeHealth(-meleeDamage);
-    }
-
-    IEnumerator meleeAttack()
-    {
-        meleeHitBox.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        meleeHitBox.enabled = false;
-    }
 }
+

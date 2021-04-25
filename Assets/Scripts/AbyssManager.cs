@@ -9,27 +9,34 @@ public class AbyssManager : MonoBehaviour
     private int waveNumber = 0;
 
     public GameObject[] enemyPrefabs;
+    List<GameObject> tempList = new List<GameObject>();
 
     private void Start()
     {
         waveSpawner = this.GetComponent<AbyssWaveSpawner>();
-        StartCoroutine(CallSpawn());
+        StartCoroutine(WaveEnd());
     }
     //Spawn Coroutine
-    IEnumerator CallSpawn()
+    IEnumerator WaveEnd()
     {
         while (true)
         {
-            Debug.Log("Spawning Wave " + waveNumber);
-            waveSpawner.SpawnWave(waveTypes(waveNumber));
-            waveNumber++;
+            // Find is a big heavy operation, so we don't want to do it every frame.
             yield return new WaitForSeconds(1f);
+            // If there aren't any enemies left in the scene, 
+            if (GameObject.FindObjectsOfType<EnemyController>().Length < 1)
+            {
+                // Wait 30 seconds
+                yield return new WaitForSeconds(1f);
+                // Get the next Wave and Spawn it.
+                waveNumber++;
+                waveSpawner.SpawnWave(waveTypes(waveNumber));
+            }
         }
     }
 
     private List<GameObject> waveTypes(int waveNum)
     {
-        List<GameObject> tempList = new List<GameObject>();
         switch(waveNum)
         {
             case 1:
