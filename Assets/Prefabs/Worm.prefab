@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4227725597040256233}
   - component: {fileID: 7989555075851012913}
+  - component: {fileID: 3895681735311914191}
   - component: {fileID: 3817527291967090882}
   - component: {fileID: 7265462385152788835}
+  - component: {fileID: 4485683157772674725}
   m_Layer: 0
   m_Name: Worm
-  m_TagString: Untagged
+  m_TagString: Abomination
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +49,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 5.133547}
   m_Center: {x: 4.1671073e-15, y: 0, z: -1.7067654}
+--- !u!135 &3895681735311914191
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202923660330194936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.291231
+  m_Center: {x: -2.9667803e-15, y: 0, z: 0.79123116}
 --- !u!54 &3817527291967090882
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,6 +91,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
+  jumpBackAmount: -100
+  contactDamageAmount: 5
+--- !u!114 &4485683157772674725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202923660330194936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2f300bc7db20947b92d39f2606678b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  maxHealth: 10
 --- !u!1001 &4781756405398664933
 PrefabInstance:
   m_ObjectHideFlags: 0
