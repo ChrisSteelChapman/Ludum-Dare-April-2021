@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2008602900123205894
+--- !u!1 &3752190801087147529
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2008602900123205895}
+  - component: {fileID: 3752190801087147528}
   m_Layer: 0
   m_Name: BarricadeSpawnPoint
   m_TagString: Untagged
@@ -16,21 +16,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2008602900123205895
+--- !u!4 &3752190801087147528
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008602900123205894}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.44, y: -0.076, z: 1.25}
+  m_GameObject: {fileID: 3752190801087147529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -5.7, z: -1.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2008602901222867055}
+  m_Father: {fileID: 3717946730451535365}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!1 &2008602901222867026
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4094647782710959295
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,48 +38,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2008602901222867055}
-  - component: {fileID: 2008602901222867054}
-  - component: {fileID: 2008602901222867025}
-  - component: {fileID: 2008602901222867024}
-  - component: {fileID: 2008602901222867027}
+  - component: {fileID: 3717946730451535365}
+  - component: {fileID: 303737128283310496}
+  - component: {fileID: 2581653332057423210}
+  - component: {fileID: 3752190800425837026}
+  - component: {fileID: 3752190800425837027}
   m_Layer: 0
-  m_Name: BuildABarricade
+  m_Name: Workbench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2008602901222867055
+--- !u!4 &3717946730451535365
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008602901222867026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -67.6, y: 8.7, z: 12.347566}
-  m_LocalScale: {x: 2.5, y: 15, z: 10}
+  m_GameObject: {fileID: 4094647782710959295}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -66.32, y: 4.9, z: 11.6}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
-  - {fileID: 2008602900123205895}
+  - {fileID: 3752190801087147528}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2008602901222867054
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &303737128283310496
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008602901222867026}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2008602901222867025
+  m_GameObject: {fileID: 4094647782710959295}
+  m_Mesh: {fileID: -5053925668127403250, guid: 41ea9a79d600cc2499be878b7d5f2b72, type: 3}
+--- !u!23 &2581653332057423210
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008602901222867026}
+  m_GameObject: {fileID: 4094647782710959295}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -91,7 +91,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -6478536213147159724, guid: 41ea9a79d600cc2499be878b7d5f2b72, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,26 +112,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2008602901222867024
+--- !u!65 &3752190800425837026
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008602901222867026}
+  m_GameObject: {fileID: 4094647782710959295}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2008602901222867027
+  m_Size: {x: 3.4906316, y: 5.9716554, z: 3.048453}
+  m_Center: {x: 0, y: -0.00000023841864, z: -0.541668}
+--- !u!114 &3752190800425837027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008602901222867026}
+  m_GameObject: {fileID: 4094647782710959295}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0c11d58f706dac48864cb8c61926d97, type: 3}
@@ -141,4 +141,4 @@ MonoBehaviour:
     type: 3}
   buildTimer: 0
   stationType: 0
-  barricadeSpawnPoint: {fileID: 2008602900123205895}
+  barricadeSpawnPoint: {fileID: 3752190801087147528}
