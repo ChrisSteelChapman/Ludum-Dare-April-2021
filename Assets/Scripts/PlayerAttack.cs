@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
     public int knifeDurability = 100;
     public float meleeRange = 5f;
 
+    public AmmoCounter ammoCounter;
 
     // Bitshift index of layer to get a bitmask.
     int layerMask = 1 << 10;
@@ -26,7 +28,10 @@ public class PlayerAttack : MonoBehaviour
         // Invert Layermask.
         layerMask = ~layerMask;
     }
-
+    private void Update()
+    {
+        ammoCounter.SetAmmo(boltsRemaining);
+    }
     public void Fire()
     {
         if (weaponType == 1 && boltsRemaining >= 0)

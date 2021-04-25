@@ -11,6 +11,8 @@ public class AbyssManager : MonoBehaviour
     public GameObject[] enemyPrefabs;
     List<GameObject> tempList = new List<GameObject>();
 
+    public AudioSource blackHole;
+    public AudioClip fiveSecondWarning;
     private void Start()
     {
         waveSpawner = this.GetComponent<AbyssWaveSpawner>();
@@ -27,7 +29,10 @@ public class AbyssManager : MonoBehaviour
             if (GameObject.FindObjectsOfType<EnemyController>().Length < 1)
             {
                 // Wait 30 seconds
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(25f);
+                // 5 second warning
+                blackHole.PlayOneShot(fiveSecondWarning);
+                yield return new WaitForSeconds(5f);
                 // Get the next Wave and Spawn it.
                 waveNumber++;
                 waveSpawner.SpawnWave(waveTypes(waveNumber));
@@ -37,7 +42,7 @@ public class AbyssManager : MonoBehaviour
 
     private List<GameObject> waveTypes(int waveNum)
     {
-        switch(waveNum)
+        switch(waveNum % 4)
         {
             case 1:
                 tempList.Add(enemyPrefabs[0]);

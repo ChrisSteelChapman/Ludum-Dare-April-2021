@@ -39,6 +39,9 @@ public class WorkStation : MonoBehaviour
                 case 3:
                     player.GetComponent<PlayerDamageable>().currentHealth += 10;
                     break;
+                case 4:
+                    player.GetComponent<CorruptionTracker>().currentCorruption += 10;
+                    break;
                 default:
                     break;
 

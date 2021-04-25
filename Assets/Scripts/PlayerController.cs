@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     public ProgressBar progressBar;
     public HealthBar healthBar;
 
+    public Text weaponText;
+
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        weaponText.text = "Current Weapon: Crossbow";
     }
 
     private void Update()
@@ -72,11 +75,27 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             playerAttack.weaponType = 0;
+            weaponText.text = "Current Weapon: Knife";
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            weaponText.text = "Current Weapon: Crossbow";
             playerAttack.weaponType = 1;
         }
+
+        
+        float w = Input.GetAxisRaw("Mouse ScrollWheel");
+        if ( w < 0f)
+        {
+            playerAttack.weaponType = 0;
+            weaponText.text = "Current Weapon: Knife";
+        }
+        if (w > 0f)
+        {
+            playerAttack.weaponType = 1;
+            weaponText.text = "Current Weapon: Crossbow";
+        }
+        
 
         // Carry Object Logic
         if (Input.GetKeyDown(KeyCode.E))

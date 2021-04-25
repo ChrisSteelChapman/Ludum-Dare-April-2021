@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 9042054810765307039}
   - component: {fileID: 9042054810765307025}
   - component: {fileID: 9042054810765307037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -223,7 +223,11 @@ GameObject:
   - component: {fileID: 9042054812364925173}
   - component: {fileID: 9042054812364925170}
   - component: {fileID: 3332397013423954397}
-  m_Layer: 0
+  - component: {fileID: 1372113545}
+  - component: {fileID: 1372113553}
+  - component: {fileID: 1372113554}
+  - component: {fileID: 1372113555}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -237,7 +241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9042054812364925162}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -349,6 +353,8 @@ MonoBehaviour:
   holdPoint: {fileID: 9042054810908210256}
   isCarryingObject: 0
   progressBar: {fileID: 3332397013423954397}
+  healthBar: {fileID: 0}
+  weaponText: {fileID: 0}
 --- !u!114 &9042054812364925170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +375,8 @@ MonoBehaviour:
   meleeDamage: 10
   meleeKnockBack: 10
   knifeDurability: 100
-  meleeRange: 5
+  meleeRange: 50
+  ammoCounter: {fileID: 1372113555}
 --- !u!114 &3332397013423954397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +390,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
+--- !u!114 &1372113545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042054812364925162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7adae494ce2686241bc7a5cff6e96e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCorruption: 0
+  playerAttack: {fileID: 9042054812364925170}
+--- !u!114 &1372113553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042054812364925162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47a6bd4f9b7bc04a9714bb704365331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 0}
+--- !u!114 &1372113554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042054812364925162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec05f69d9304d60419495519b370c54e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  healthBar: {fileID: 1372113553}
+  deathPanel: {fileID: 0}
+--- !u!114 &1372113555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9042054812364925162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759ad5b996d9c364e818f0ab0b66b561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 0
+  ammoCounter: {fileID: 0}
 --- !u!1001 &2787317410196383472
 PrefabInstance:
   m_ObjectHideFlags: 0
